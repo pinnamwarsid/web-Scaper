@@ -1,0 +1,26 @@
+# -*- coding: utf-8 -*-
+!pip install nltk
+!pip install newspaper3k
+
+import nltk
+from newspaper import Article
+
+url = 'https://www.washingtonpost.com/technology/2020/09/25/privacy-check-blacklight/'
+article = Article(url)
+
+#Doing some Natural Language Processing
+article.download()
+article.parse()
+nltk.download('punkt')
+article.nlp()
+
+#Getting Author, publish date, author, article text and summary
+article.authors
+
+article.publish_date
+
+article.top_image
+
+print(article.text)
+
+print(article.summary)
